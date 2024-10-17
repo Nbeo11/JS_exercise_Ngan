@@ -109,16 +109,25 @@ let result = document.querySelector('.result')
 
 function checkAnswer(selectedAnswer) {
     const answerIndex = questions[currentQuestionindex].correctAnswer;
+    const answerContainer = document.getElementById('answer-container');
+    const answerDivs = answerContainer.children;
     message.style.color = selectedAnswer == answerIndex ? "green" : "red";
     message.style.fontSize = "25px"
     if (selectedAnswer == answerIndex) {
         score += 10;
         message.innerText = "Câu trả lời đúng!";
+        answerDivs[selectedAnswer].style = "background-color:green"
     } else {
         message.innerText = "Câu trả lời chưa chính xác! Đáp án đúng là " + questions[currentQuestionindex].answers[answerIndex];
+        answerDivs[selectedAnswer].style = "background-color:red"
     }
 
     document.getElementById('score').innerText = score;
+
+    for (let div of answerDivs) {
+        div.onclick = null; 
+        div.classList.add('disabled');
+    }
     currentQuestionindex++;
     console.log(currentQuestionindex);
     
