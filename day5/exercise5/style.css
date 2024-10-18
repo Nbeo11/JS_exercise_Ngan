@@ -1,0 +1,67 @@
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.content {
+    max-width: 1000px;
+    min-height: 200px;
+    border: 2px solid rgb(162, 162, 162);
+    border-radius: 20px;
+    position: relative;
+}
+
+input {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    opacity: 0;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.items {
+    padding: 30px;
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.items>div {
+    width: 150px;
+    height: 180px;
+    z-index: 2;
+    position: relative;
+}
+
+.note {
+    position: absolute;
+    top: 45px;
+    left: 200px;
+    color: rgb(157, 157, 157);
+}
+
+button {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 0;
+    right: 0;
+    padding: 0;
+}
+
+p {
+    white-space: nowrap;
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    margin: 0;
+    text-align: center;
+}
+
+.upload {
+    align-items: center;
+}
