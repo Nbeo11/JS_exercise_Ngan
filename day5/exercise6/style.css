@@ -77,9 +77,24 @@ textarea {
     flex-direction: column;
 }
 
-.nodeList > div {
+.nodeItem {
     display: flex;
     gap: 20px;
     border: 1px dotted black;
     padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nodeItem > .buttonContainer > button{
+    font-size: 13px;
+    height: 30px;
+}
+
+.editButton {
+    background-color: green;
+}
+
+.deleteButton {
+    background-color: orangered;
 }

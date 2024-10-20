@@ -61,6 +61,6 @@ function drag(event, fileName) {
 
 function drop(event) {
     event.preventDefault();
-    var files = event.dataTransfer.files;
+    let files = event.dataTransfer.files;
     fileUpload(files);
 }
