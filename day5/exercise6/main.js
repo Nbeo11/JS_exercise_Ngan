@@ -54,21 +54,28 @@ document.querySelector('.formNote').addEventListener('submit', function (event) 
 
     if (titleText || contentText) {
         if (currentEditingNote) {
+            // Cập nhật ghi chú hiện có
             currentEditingNote.title = titleText;
             currentEditingNote.content = contentText;
         } else {
+            // Tạo một ghi chú mới
             const newNote = { title: titleText, content: contentText };
             noteArr.push(newNote);
         }
+        // Lưu mảng đã cập nhật vào localStorage
         localStorage.setItem("array", JSON.stringify(noteArr));
-
+        
+        // Hiển thị lại danh sách ghi chú đã cập nhật
         loadNotes();
-
+        
+        // Xóa các trường nhập sau khi gửi
         document.querySelector("input").value = '';
         document.querySelector("textarea").value = '';
 
+        // Đặt lại ghi chú đang chỉnh sửa
         currentEditingNote = null;
-
+        
+        // Đóng popup form
         isAppear = false;
         formPopup(isAppear);
     }
@@ -80,24 +87,30 @@ function deleteNote(title) {
     loadNotes();
 }
 
-let currentEditingNote = null;
+let currentEditingNote = null; // Biến để theo dõi ghi chú đang được chỉnh sửa
 
 function editNote(title) {
+    // Tìm ghi chú cần chỉnh sửa
     currentEditingNote = noteArr.find(note => note.title === title);
-
+    
+    // Điền form với thông tin của ghi chú hiện tại
     document.querySelector("input").value = currentEditingNote.title;
     document.querySelector("textarea").value = currentEditingNote.content;
 
-    isAppear = true;
+    // Hiện form
+    isAppear = true; // Cập nhật biến này dựa trên logic hiển thị
     formPopup(isAppear);
 }
 
 function cancelNote() {
+    // Đặt lại các trường nhập liệu
     document.querySelector("input").value = '';
     document.querySelector("textarea").value = '';
 
+    // Đặt lại ghi chú đang chỉnh sửa
     currentEditingNote = null;
 
+    // Đóng popup form
     isAppear = false;
     formPopup(isAppear);
 }
