@@ -58,12 +58,12 @@ const musicList = [
 
 let songIndex = 0;
 
-function updateSongSelection() {
-    const songItems = document.querySelectorAll('.songItem');
-    songItems.forEach((item, idx) => {
-        item.classList.toggle('selected', idx === songIndex);
-    });
-}
+// function updateSongSelection() {
+//     const songItems = document.querySelectorAll('.songItem');
+//     songItems.forEach((item, idx) => {
+//         item.classList.toggle('selected', idx === songIndex);
+//     });
+// }
 
 musicList.forEach((song, index) => {
     const songItem = document.createElement("div");
@@ -72,7 +72,7 @@ musicList.forEach((song, index) => {
 
     songItem.addEventListener("click", () => {
         songIndex = index;
-        updateSongSelection();
+        // updateSongSelection();
         loadSong();
         playSong();
     });
@@ -100,14 +100,14 @@ function pauseSong() {
 
 function prevSong() {
     songIndex = (songIndex > 0) ? songIndex - 1 : musicList.length - 1;
-    updateSongSelection();
+    // updateSongSelection();
     loadSong();
     playSong();
 }
 
 function nextSong() {
     songIndex = (songIndex < musicList.length - 1) ? songIndex + 1 : 0;
-    updateSongSelection();
+    // updateSongSelection();
     loadSong();
     playSong();
 }
@@ -203,7 +203,7 @@ audio.addEventListener("ended", nextSong);
 
 // Tải bài hát đầu tiên
 loadSong();
-updateSongSelection();
+// updateSongSelection();
 
 
 
@@ -272,7 +272,6 @@ form.addEventListener('submit', function(event) {
 
     songItem.addEventListener("click", () => {
         songIndex = musicList.length - 1; 
-        updateSongSelection();
         loadSong();
         playSong();
     });

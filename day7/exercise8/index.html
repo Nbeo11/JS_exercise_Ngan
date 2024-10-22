@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="title">
+                <h3>Music Player</h3>
+                <button>
+                    <i class="fas fa-regular fa-arrow-up-from-bracket" id="iconUpload"></i>
+                </button>
+            </div>
+            <div class="imgContainer">
+                <img src="images/mot_phut.jpg" alt="musicCover" id="cover" />
+            </div>
+            <div class="musicContainer" id="musicContainer">
+                <div class="music-info">
+                    <h4 id="title"></h4>
+                    <div class="progressContainer" id="progressContainer">
+                        <div class="progress" id="progress"> </div>
+                        <div id="progressHandle"></div>
+                    </div>
+                </div>
+                <audio src="music/mot_phut.mp3" id="audio"></audio>
+                <div class="navigation">
+                    <button id="prev" class="actionBtn">
+                        <i class="fas fa-backward"></i>
+                    </button>
+                    <button id="play" class="actionBtn actionBtnBig">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <button id="next" class="actionBtn">
+                        <i class="fas fa-forward"></i>
+                    </button>
+                </div>
+                <div id="songList"></div>
+            </div>
+        </div>
+        <form class="formNote">
+            <span>Thêm bài nhạc mới</span>
+            <div class="items" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div class="music">
+                    <div class="upload">Thêm bài hát</div>
+                    <input type="file" id="musicInput" accept=".mp3">
+                    <p id="musicFileName"></p>
+                </div>
+                <div class="image">
+                    <div class="upload">Thêm ảnh cho bài hát</div>
+                    <input type="file" id="imageInput" accept=".jpg, .jpeg, .png">
+                    <p id="imageFileName"></p>
+                </div>
+            </div>
+            <div>Tên bài hát</div>
+            <input type="text" id="songTitle">
+            <div>
+                <button type="submit">Save</button>
+                <button id="closeForm">Cancel</button>
+            </div>
+        </form>
+    </div>
+    <script type="text/javascript" src="main.js"></script>
+</body>
+
+</html>

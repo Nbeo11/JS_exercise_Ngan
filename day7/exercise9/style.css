@@ -1,0 +1,124 @@
+html {
+    margin: 0;
+    background-color: rgb(200, 178, 255);
+}
+
+.container {
+    max-width: 1024px;
+    padding: 10px;
+    background-color: #fbeaff;
+    min-height: 645px;
+    margin: 0 auto;
+    border-radius: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.background {
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+}
+
+h3 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.title {
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.title > button {
+    border: none;
+    background-color: transparent;
+}
+
+i {
+    position: relative;
+    font-size: 40px;
+    cursor: pointer;
+    z-index: 30;
+}
+
+.image {
+    display: flex;
+}
+
+.image>img {
+    height: 80px;
+    margin-left: -40px;
+    z-index: 2;
+}
+
+.score {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.score>div {
+    font-size: 22px;
+}
+
+.content {
+    position: relative;
+    height: 550px;
+}
+
+.basket {
+    position: absolute;
+    bottom: 0;
+    
+    transition: all 0.3s linear
+}
+
+.basket>img {
+    width: 128px;
+}
+
+
+.egg {
+    position: absolute;
+    top: 100px;
+    width: 60px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: rgb(183, 101, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(255, 205, 237);
+    padding: 20px;
+    border: 2px solid #b1b1b1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: none;
+    border-radius: 8px;
+}
+
+.popup .score {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.popup button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
